@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyce Mello - Fragrâncias para Casa</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/lucide.min.js"></script>
+
+    <style>
+        /* Configuração do tema "Aroma Floral" */
+        :root {
+            --bg-main: #FFFBFD;
+            --bg-secondary: #FDFBFE;
+            --text-main: #4E4A4F;
+            --text-light: #A39DA7;
+            --accent-pink: #E6C0C8;
+            --accent-lilac: #D8BFD8;
+            --accent-sage: #C1D5C0;
+            --whatsapp-green: #25D366;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            /* ADICIONE O LINK DA SUA IMAGEM DE FUNDO AQUI */
+            background-image: url('https://img.freepik.com/fotos-premium/um-fundo-branco-com-um-fundo-branco-que-diz-voce-nao-pode-ve-lo_858586-207.jpg');
+            background-color: var(--bg-main);
+            background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
+            background-size: cover; /* Garante que a imagem cubra todo o fundo */
+            color: var(--text-main);
+        }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-great-vibes { font-family: 'Great Vibes', cursive; }
+
+        /* Animações de entrada */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            @apply bg-[var(--accent-pink)] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--accent-pink)]/30;
+        }
+        
+        .card {
+            @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transition-all duration-300 border border-transparent flex flex-col cursor-pointer;
+        }
+        .card:hover {
+            @apply shadow-2xl transform -translate-y-2 border-[var(--accent-pink)]/50;
+        }
+
+        /* Estilos para a página de produto */
+        .product-page {
+            display: none; /* Oculto por padrão */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- PÁGINA PRINCIPAL -->
+    <div id="main-page">
+        <!-- Header -->
+        <header class="bg-white/80 backdrop-blur-lg p-4 sticky top-0 z-50 shadow-sm">
+            <div class="container mx-auto flex justify-between items-center px-4">
+                 <a href="#" class="flex items-center space-x-2 main-page-link">
+                    <i data-lucide="flower-2" class="text-[var(--accent-pink)] w-8 h-8"></i>
+                    <h1 class="text-2xl font-playfair font-bold text-[var(--text-main)] hidden sm:block">Joyce Mello</h1>
+                </a>
+                <nav class="flex space-x-6 text-[var(--text-main)] font-semibold items-center">
+                    <a href="#produtos" class="hover:text-[var(--accent-pink)] transition">Produtos</a>
+                    <a href="#sobre" class="hover:text-[var(--accent-pink)] transition hidden sm:inline">Sobre</a>
+                    <a href="https://wa.me/554497344446" target="_blank" class="bg-[var(--accent-pink)] text-white font-bold py-2 px-5 rounded-full hover:opacity-90 transition">Fale com a Joyce</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="relative bg-transparent min-h-[80vh] flex items-center overflow-hidden">
+            <div class="container mx-auto px-6 z-20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="md:w-1/2 text-center md:text-left reveal">
+                        <h1 class="font-great-vibes text-6xl md:text-8xl text-[var(--text-main)]">Um Refúgio Perfumado</h1>
+                        <p class="font-playfair text-xl md:text-2xl italic mt-4 text-[var(--text-light)] max-w-md mx-auto md:mx-0">Fragrâncias que encantam a alma e transformam ambientes.</p>
+                        <a href="#produtos" class="btn-primary mt-8 inline-block">Descubra Nossas Coleções</a>
+                    </div>
+                    <div class="md:w-1/2 reveal">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1373537/1737724982_mobileee.jpg" alt="[Imagem de um ambiente aconchegante com velas e flores]" class="rounded-3xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Produtos -->
+        <section id="produtos" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="font-playfair text-4xl font-bold text-[var(--text-main)]">Nossa Coleção Completa</h2>
+                    <p class="text-[var(--text-light)] mt-2">Explore nossa gama de fragrâncias artesanais.</p>
+                </div>
+                <div id="product-list" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Os cards de produto serão inseridos aqui pelo JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre -->
+        <section id="sobre" class="py-24 bg-white/50">
+            <div class="container mx-auto px-6">
+                 <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+                    <div class="md:w-1/2 text-center md:text-left reveal">
+                        <h2 class="font-playfair text-4xl font-bold text-[var(--text-main)]">Nossa <span class="text-[var(--accent-pink)]">Essência</span></h2>
+                        <p class="text-lg text-[var(--text-light)] my-6">O Aromas da Helo nasceu para auxiliar sua criadora Heloisa na renda da família, sendo o intuito possibilitar sua filha mais velha o acesso a faculdade. Helô sempre apaixonada pelo cuidado com o lar, se encantou com as sensações que os aromas podiam proporcionar e este encanto foi tomando conta da vida e da família até que o negócio cresceu, tanto que hoje o Aromas da Helo é uma empresa familiar.</p>
+                    </div>
+                    <div class="md:w-1/2 reveal">
+                        <img src="https://images.tcdn.com.br/files/1373537/themes/5/img/settings/01ee36bf-4356-4a36-a00d-854d882e183e.jpg?5bcee0e68d9e86769a0452368ea83b7e?5d515176c0e9750a90e29afc40bdf71c" alt="[Imagem de uma mulher criando fragrâncias]" class="rounded-3xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="bg-white/30 mt-16 py-12 text-center text-[var(--text-main)]">
+            <div class="container mx-auto">
+                <p class="font-playfair font-bold text-2xl mb-2">Joyce</p>
+                <p class="text-[var(--text-light)]">&copy; 2025 - Seu refúgio perfumado.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PÁGINAS DE PRODUTOS (geradas dinamicamente) -->
+    <div id="product-pages-container">
+        <!-- O conteúdo da página de produto será inserido aqui pelo JavaScript -->
+    </div>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/554497344446?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Aroma%20Floral." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-[var(--whatsapp-green)] w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50 transform hover:scale-110 transition-transform duration-300"
+       aria-label="Fale conosco pelo WhatsApp">
+        <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19.11 4.91C17.22 3 14.72 2 12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.45 1.32 4.95L2 22l5.27-1.39c1.44.83 3.06 1.31 4.73 1.31h.01c5.52 0 10-4.48 10-10c0-2.72-1.01-5.22-2.9-7.1zM12 20.37c-1.55 0-3.04-.49-4.3-1.39l-.3-.18l-3.18.84l.86-3.1l-.2-.32C3.63 15.06 3 13.57 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9c0 4.97-4.03 9-9 9zm4.57-6.21c-.27-.14-1.62-.8-1.87-.89c-.25-.09-.43-.14-.61.14c-.18.28-.71.89-.87 1.08c-.16.19-.32.21-.6.07c-.28-.13-1.18-.44-2.25-1.39c-.83-.73-1.39-1.64-1.56-1.92c-.17-.28-.02-.43.12-.57c.13-.13.28-.34.42-.51c.14-.17.19-.28.28-.47c.09-.19.05-.36-.02-.5c-.07-.15-.61-1.47-.84-2.02c-.23-.55-.46-.48-.61-.48c-.14,0-.32,0-.49,0c-.18,0-.46.07-.7.35c-.24.28-.92,1-1.07,2.4c.15,1.4,1.1,2.78,1.25,3c.15.2,1.81,2.86,4.39,3.89c.6.24,1.08.38,1.44.48c.55.15,1.04.13,1.41.08c.42-.06,1.25-.51,1.42-1c.17-.49.17-.92.12-1.01c-.05-.1-.18-.16-.35-.25z"/></svg>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- BANCO DE DADOS DOS PRODUTOS ---
+            const productsData = [
+                { id: 'prod1', name: 'Vela Jardim Secreto', description: 'Blend de jasmim e rosas brancas.', price: 89.90, color: 'E6C0C8' },
+                { id: 'prod2', name: 'Difusor Brisa Leve', description: 'Lavanda fresca com um toque cítrico.', price: 119.90, color: 'D8BFD8' },
+                { id: 'prod3', name: 'Home Spray Pétalas', description: 'Delicadeza e romance das peônias.', price: 79.90, color: 'C1D5C0' },
+                { id: 'prod4', name: 'Óleo Sonho Floral', description: 'Ylang-ylang, gerânio e sândalo.', price: 59.90, color: 'EAB8C1' },
+                { id: 'prod5', name: 'Sachê Algodão', description: 'Conforto e suavidade da flor de algodão.', price: 29.90, color: 'DDC4E6' },
+                { id: 'prod6', name: 'Vela Orvalho', description: 'Aroma de terra molhada e folhas verdes.', price: 85.00, color: 'B8D8B6' },
+                { id: 'prod7', name: 'Difusor Aconchego', description: 'Baunilha, canela e flor de laranjeira.', price: 125.50, color: 'F0C9D1' },
+                { id: 'prod8', name: 'Spray Calma na Alma', description: 'Camomila, lavanda e capim-limão.', price: 75.00, color: 'C9B8E2' },
+                { id: 'prod9', name: 'Óleo Energia', description: 'Hortelã-pimenta, alecrim e eucalipto.', price: 55.90, color: 'D3E0D2' },
+                { id: 'prod10', name: 'Vela Dama da Noite', description: 'Fragrância intensa e misteriosa da flor.', price: 92.00, color: 'E6C0C8' },
+                { id: 'prod11', name: 'Difusor Poesia', description: 'Figo maduro com notas amadeiradas.', price: 135.00, color: 'D8BFD8' },
+                { id: 'prod12', name: 'Sachê Verbena', description: 'Refrescância cítrica e vibrante.', price: 32.50, color: 'C1D5C0' },
+                { id: 'prod13', name: 'Spray Jardim de Inverno', description: 'Pinheiro, cedro e um toque de menta.', price: 78.00, color: 'EAB8C1' },
+                { id: 'prod14', name: 'Vela Flor de Cerejeira', description: 'A delicadeza da flor de sakura.', price: 95.00, color: 'DDC4E6' },
+                { id: 'prod15', name: 'Difusor Chá Branco', description: 'Elegância e sofisticação do chá branco.', price: 129.90, color: 'B8D8B6' },
+                { id: 'prod16', name: 'Óleo Relaxante', description: 'Mix de lavanda, bergamota e patchouli.', price: 62.00, color: 'F0C9D1' },
+                { id: 'prod17', name: 'Spray Noite Tranquila', description: 'Ideal para borrifar nos travesseiros.', price: 69.90, color: 'C9B8E2' },
+                { id: 'prod18', name: 'Vela Manhã no Campo', description: 'Aroma de capim-limão e gengibre.', price: 88.00, color: 'D3E0D2' },
+                { id: 'prod19', name: 'Difusor Orquídea', description: 'Fragrância exótica e sofisticada.', price: 145.00, color: 'E6C0C8' },
+                { id: 'prod20', name: 'Spray Amor Perfeito', description: 'Um buquê de flores vermelhas e frutas.', price: 82.00, color: 'D8BFD8' }
+            ];
+
+            const joycePhone = '554497344446';
+
+            // --- ELEMENTOS DO DOM ---
+            const mainPage = document.getElementById('main-page');
+            const productPagesContainer = document.getElementById('product-pages-container');
+            const productListContainer = document.getElementById('product-list');
+
+            // --- LÓGICA DE NAVEGAÇÃO E RENDERIZAÇÃO ---
+            const showMainPage = () => {
+                mainPage.style.display = 'block';
+                productPagesContainer.style.display = 'none';
+                window.scrollTo(0, 0);
+            };
+
+            const showProductPage = (productId) => {
+                mainPage.style.display = 'none';
+                productPagesContainer.style.display = 'block';
+                Array.from(productPagesContainer.children).forEach(page => page.style.display = 'none');
+                const pageToShow = document.getElementById(`page-${productId}`);
+                if (pageToShow) {
+                    pageToShow.style.display = 'block';
+                }
+                window.scrollTo(0, 0);
+            };
+
+            // Renderiza os cards de produto e as páginas de detalhes
+            productsData.forEach((product, index) => {
+                const imageUrl = `https://placehold.co/600x400/${product.color}/FFFFFF?text=${encodeURIComponent(product.name)}`;
+                
+                // Card do produto na página principal
+                const card = document.createElement('div');
+                card.className = 'card reveal';
+                card.style.transitionDelay = `${(index % 4) * 100}ms`;
+                card.dataset.productId = product.id;
+                card.innerHTML = `
+                    <img src="${imageUrl}" alt="[Imagem do produto ${product.name}]" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="font-playfair text-xl font-bold flex-grow">${product.name}</h3>
+                        <p class="text-[var(--text-light)] mt-2 text-sm flex-grow">${product.description}</p>
+                        <div class="mt-4 pt-4 border-t border-gray-200/50 flex justify-between items-center">
+                            <span class="text-lg font-bold" style="color:#${product.color}">R$ ${product.price.toFixed(2).replace('.',',')}</span>
+                        </div>
+                    </div>
+                `;
+                card.addEventListener('click', () => showProductPage(product.id));
+                productListContainer.appendChild(card);
+
+                // Página de detalhes do produto (oculta por padrão)
+                const productPage = document.createElement('div');
+                productPage.id = `page-${product.id}`;
+                productPage.className = 'product-page';
+                productPage.innerHTML = `
+                    <div class="min-h-screen pt-24 md:pt-32 pb-16">
+                        <div class="container mx-auto px-6">
+                            <button class="back-to-main mb-8 font-bold text-[var(--accent-pink)] hover:underline">‹ Voltar para todos os produtos</button>
+                            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                                <div class="lg:w-1/2">
+                                     <img src="https://placehold.co/600x600/${product.color}/FFFFFF?text=${encodeURIComponent(product.name)}" alt="[Imagem do produto ${product.name}]" class="rounded-2xl shadow-2xl w-full">
+                                </div>
+                                <div class="lg:w-1/2">
+                                    <h1 class="font-playfair text-4xl md:text-6xl font-bold text-[var(--text-main)] leading-tight">${product.name}</h1>
+                                    <p class="text-lg text-[var(--text-light)] my-6">${product.description}</p>
+                                    <div class="text-4xl font-bold my-6" style="color:#${product.color}">R$ ${product.price.toFixed(2).replace('.',',')}</div>
+                                    <div class="mt-8">
+                                        <a href="https://wa.me/${joycePhone}?text=Olá, Joyce! Tenho interesse em encomendar o seguinte produto: ${encodeURIComponent(product.name)}" target="_blank" class="w-full text-center bg-green-500 text-white font-bold py-4 px-8 rounded-full hover:bg-green-600 transition-colors flex items-center justify-center gap-2 text-lg transform hover:scale-105">
+                                            <i data-lucide="message-circle"></i> Encomendar com a Joyce
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                productPagesContainer.appendChild(productPage);
+            });
+            
+            // --- EVENT LISTENERS ---
+            document.querySelectorAll('.back-to-main').forEach(button => button.addEventListener('click', showMainPage));
+            document.querySelectorAll('.main-page-link').forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); showMainPage(); }));
+            
+            // --- ANIMAÇÕES ---
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => observer.observe(el));
+            
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
