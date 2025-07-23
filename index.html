@@ -17,25 +17,24 @@
     <script src="https://unpkg.com/lucide-react@latest/dist/lucide.min.js"></script>
 
     <style>
-        /* Configuração do tema "Aroma Floral" */
+        /* TEMA BEGE ELEGANTE */
         :root {
-            --bg-main: #FFFBFD;
-            --bg-secondary: #FDFBFE;
-            --text-main: #4E4A4F;
-            --text-light: #A39DA7;
-            --accent-pink: #E6C0C8;
-            --accent-lilac: #D8BFD8;
-            --accent-sage: #C1D5C0;
+            --bg-main: #F9F5F0;         /* Champagne Claro */
+            --bg-secondary: #FFFFFF;    /* Branco para sobreposições */
+            --text-main: #9C8467;       /* Marrom Claro */
+            --text-light: #B7A591;      /* Tom mais claro de Marrom para parágrafos */
+            --accent-gold: #D8B370;     /* Dourado Suave */
+            --accent-sand: #EADBC8;     /* Areia Rosada */
             --whatsapp-green: #25D366;
         }
 
         body {
             font-family: 'Lato', sans-serif;
-            /* ADICIONE O LINK DA SUA IMAGEM DE FUNDO AQUI */
-            background-image: url('https://img.freepik.com/fotos-premium/um-fundo-branco-com-um-fundo-branco-que-diz-voce-nao-pode-ve-lo_858586-207.jpg');
+            /* IMAGEM DE FUNDO ATUALIZADA PARA TOM BEGE */
+            background-image: url('https://elements-resized.envatousercontent.com/elements-preview-images/96fdb30c-c9b4-4603-9b69-0944a7dd8e6e?w=1370&cf_fit=scale-down&q=85&format=auto&s=edd515a59c9632d771415feed39d7c679456671f4af78e9be1b8db6b08f81c5b');
             background-color: var(--bg-main);
-            background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */
-            background-size: cover; /* Garante que a imagem cubra todo o fundo */
+            background-attachment: fixed;
+            background-size: auto;
             color: var(--text-main);
         }
         .font-playfair { font-family: 'Playfair Display', serif; }
@@ -53,14 +52,14 @@
         }
 
         .btn-primary {
-            @apply bg-[var(--accent-pink)] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--accent-pink)]/30;
+            @apply bg-[var(--accent-gold)] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-[var(--accent-gold)]/30;
         }
         
         .card {
-            @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transition-all duration-300 border border-transparent flex flex-col cursor-pointer;
+            @apply bg-[var(--bg-secondary)]/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transition-all duration-300 border border-transparent flex flex-col cursor-pointer;
         }
         .card:hover {
-            @apply shadow-2xl transform -translate-y-2 border-[var(--accent-pink)]/50;
+            @apply shadow-2xl transform -translate-y-2 border-[var(--accent-gold)]/50;
         }
 
         /* Estilos para a página de produto */
@@ -74,16 +73,16 @@
     <!-- PÁGINA PRINCIPAL -->
     <div id="main-page">
         <!-- Header -->
-        <header class="bg-white/80 backdrop-blur-lg p-4 sticky top-0 z-50 shadow-sm">
+        <header class="bg-[var(--bg-secondary)]/80 backdrop-blur-lg p-4 sticky top-0 z-50 shadow-sm">
             <div class="container mx-auto flex justify-between items-center px-4">
                  <a href="#" class="flex items-center space-x-2 main-page-link">
-                    <i data-lucide="flower-2" class="text-[var(--accent-pink)] w-8 h-8"></i>
+                    <i data-lucide="gem" class="text-[var(--accent-gold)] w-8 h-8"></i>
                     <h1 class="text-2xl font-playfair font-bold text-[var(--text-main)] hidden sm:block">Joyce Mello</h1>
                 </a>
                 <nav class="flex space-x-6 text-[var(--text-main)] font-semibold items-center">
-                    <a href="#produtos" class="hover:text-[var(--accent-pink)] transition">Produtos</a>
-                    <a href="#sobre" class="hover:text-[var(--accent-pink)] transition hidden sm:inline">Sobre</a>
-                    <a href="https://wa.me/554497344446" target="_blank" class="bg-[var(--accent-pink)] text-white font-bold py-2 px-5 rounded-full hover:opacity-90 transition">Fale com a Joyce</a>
+                    <a href="#produtos" class="hover:text-[var(--accent-gold)] transition">Produtos</a>
+                    <a href="#sobre" class="hover:text-[var(--accent-gold)] transition hidden sm:inline">Sobre</a>
+                    <a href="https://wa.me/554497344446" target="_blank" class="bg-[var(--accent-gold)] text-white font-bold py-2 px-5 rounded-full hover:opacity-90 transition">Fale com a Joyce</a>
                 </nav>
             </div>
         </header>
@@ -93,12 +92,12 @@
             <div class="container mx-auto px-6 z-20">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                     <div class="md:w-1/2 text-center md:text-left reveal">
-                        <h1 class="font-great-vibes text-6xl md:text-8xl text-[var(--text-main)]">Um Refúgio Perfumado</h1>
-                        <p class="font-playfair text-xl md:text-2xl italic mt-4 text-[var(--text-light)] max-w-md mx-auto md:mx-0">Fragrâncias que encantam a alma e transformam ambientes.</p>
+                        <h1 class="font-great-vibes text-6xl md:text-8xl text-[var(--text-main)]">Sinta o Aroma, Viva o Momento</h1>
+                        <p class="font-playfair text-xl md:text-2xl italic mt-4 text-[var(--text-light)] max-w-md mx-auto md:mx-0">Descubra fragrâncias criadas para transformar seus espaços em refúgios de bem-estar, aconchego e elegância.</p>
                         <a href="#produtos" class="btn-primary mt-8 inline-block">Descubra Nossas Coleções</a>
                     </div>
                     <div class="md:w-1/2 reveal">
-                        <img src="https://images.tcdn.com.br/img/img_prod/1373537/1737724982_mobileee.jpg" alt="[Imagem de um ambiente aconchegante com velas e flores]" class="rounded-3xl shadow-2xl">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1373537/1737724982_mobileee.jpg" alt="[Imagem de um ambiente aconchegante com velas e difusor]" class="rounded-3xl shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -118,11 +117,11 @@
         </section>
 
         <!-- Seção Sobre -->
-        <section id="sobre" class="py-24 bg-white/50">
+        <section id="sobre" class="py-24 bg-[var(--bg-secondary)]/50">
             <div class="container mx-auto px-6">
                  <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12">
                     <div class="md:w-1/2 text-center md:text-left reveal">
-                        <h2 class="font-playfair text-4xl font-bold text-[var(--text-main)]">Nossa <span class="text-[var(--accent-pink)]">Essência</span></h2>
+                        <h2 class="font-playfair text-4xl font-bold text-[var(--text-main)]">Nossa <span class="text-[var(--accent-gold)]">Essência</span></h2>
                         <p class="text-lg text-[var(--text-light)] my-6">O Aromas da Helo nasceu para auxiliar sua criadora Heloisa na renda da família, sendo o intuito possibilitar sua filha mais velha o acesso a faculdade. Helô sempre apaixonada pelo cuidado com o lar, se encantou com as sensações que os aromas podiam proporcionar e este encanto foi tomando conta da vida e da família até que o negócio cresceu, tanto que hoje o Aromas da Helo é uma empresa familiar.</p>
                     </div>
                     <div class="md:w-1/2 reveal">
@@ -133,7 +132,7 @@
         </section>
         
         <!-- Footer -->
-        <footer class="bg-white/30 mt-16 py-12 text-center text-[var(--text-main)]">
+        <footer class="bg-[var(--bg-secondary)]/30 mt-16 py-12 text-center text-[var(--text-main)]">
             <div class="container mx-auto">
                 <p class="font-playfair font-bold text-2xl mb-2">Joyce Mello</p>
                 <p class="text-[var(--text-light)]">&copy; 2025 - Seu refúgio perfumado.</p>
@@ -156,28 +155,28 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- BANCO DE DADOS DOS PRODUTOS ---
+            // --- BANCO DE DADOS DOS PRODUTOS (CORES ATUALIZADAS PARA O TEMA BEGE) ---
             const productsData = [
                 // Água para Lençóis
                 {
                     id: 'agua-lencois-60',
                     name: 'Água para Lençóis 60ml',
                     description: 'Transforme o seu ambiente com a água de lençóis, uma fragrância cuidadosamente desenvolvida para trazer bem-estar e a sensação acolhedora de roupa limpa e fresquinha.',
-                    color: 'D8BFD8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_60ml_cereja_e_avela_223_1_35249b5272d52ef72ea332d6d6ed051c.jpg',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_60ml_cereja_e_avela_223_1_35249b5272d52ef72ea332d6d6ed051c.jpg',
                     aromas: ['Bamboo', 'Cereja e Avelã', 'Paragon', 'Vanilla']
                 },
                 {
                     id: 'agua-lencois-250',
                     name: 'Água para Lençóis 250ml',
                     description: 'Ideal para perfumar cortinas, lençóis, toalhas, cobertores, estofados, tapetes. Sua fórmula delicada fixa suavemente, proporcionando um toque especial ao seu dia a dia.',
-                    color: 'D8BFD8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_250ml_segredos_da_natureza_191_1_cf122c91d420351383a68a174efdc6b6.jpg',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_250ml_segredos_da_natureza_191_1_cf122c91d420351383a68a174efdc6b6.jpg',
                     aromas: ['Algodão', 'Alecrim', 'Bamboo', 'Capoart', 'Cereja e Avelã', 'Confort Home', 'Paragon', 'Super Baby', 'Vanilla']
                 },
                 {
                     id: 'agua-lencois-500',
                     name: 'Água para Lençóis 500ml',
                     description: 'A versão de 500ml para garantir que seu ambiente esteja sempre com a sensação de roupa limpa e fresquinha.',
-                    color: 'D8BFD8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_500ml_madeiras_nobres_207_1_063f6ecc6b196cd211524e598ce797b5.jpg',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_500ml_madeiras_nobres_207_1_063f6ecc6b196cd211524e598ce797b5.jpg',
                     aromas: ['Madeiras Nobres']
                 },
                 // Home Spray
@@ -185,7 +184,7 @@
                     id: 'home-spray-250',
                     name: 'Home Spray 250ml',
                     description: 'Desenvolvido para transformar seu ambiente com uma perfumação intensa e envolvente, criando uma atmosfera aromática única.',
-                    color: 'EAB8C1', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/home_spray_250ml_jardim_dos_sonhos_173_2_a74d2eed36a3789010de27336dbbf366.jpg',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/home_spray_250ml_jardim_dos_sonhos_173_2_a74d2eed36a3789010de27336dbbf366.jpg',
                     aromas: ['Algodão', 'Alecrim', 'Bamboo', 'Capoart', 'Cereja e Avelã', 'Confort Home', 'Paragon', 'Super Baby', 'Vanilla']
                 },
                 // Difusor de Ambiente
@@ -193,7 +192,7 @@
                     id: 'difusor-250',
                     name: 'Difusor de Ambiente 250ml',
                     description: 'A solução perfeita para manter seu ambiente perfumado de maneira suave e constante. Também se torna uma peça decorativa que combina com qualquer estilo.',
-                    color: 'F0C9D1', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/difusor_de_ambiente_250ml_brisa_da_manha_153_2_1f1b2ffa528e4e00715423530384b134.jpg',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/difusor_de_ambiente_250ml_brisa_da_manha_153_2_1f1b2ffa528e4e00715423530384b134.jpg',
                     aromas: ['Algodão', 'Alecrim', 'Bamboo', 'Capoart', 'Cereja e Avelã', 'Confort Home', 'Paragon', 'Sementes do Brasil', 'Super Baby', 'Vanilla']
                 },
                 // Essência Concentrada
@@ -201,7 +200,7 @@
                     id: 'essencia-18',
                     name: 'Essência Concentrada 18ml',
                     description: 'Para uso no Aromatizador Elétrico. Com base oleosa de alta concentração, proporciona uma experiência olfativa única e duradoura.',
-                    color: 'B8D8B6', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/essencia_concentrada_18ml_algodao_9_1_b27aaee3ad189b2905ac4e485fcf34d7.jpg',
+                    color: 'EADBC8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/essencia_concentrada_18ml_algodao_9_1_b27aaee3ad189b2905ac4e485fcf34d7.jpg',
                     aromas: ['Algodão', 'Alecrim', 'Bamboo', 'Capoart', 'Cereja e Avelã', 'Confort Home', 'Madeiras Nobres', 'Paragon', 'Sementes do Brasil', 'Super Baby', 'Vanilla']
                 },
                 // Aromatizador Elétrico
@@ -209,7 +208,7 @@
                     id: 'aromatizador-eletrico',
                     name: 'Aromatizador Elétrico',
                     description: 'Acessório perfeito para transformar qualquer ambiente com aromas envolventes. Bivolt, discreto e versátil, é ideal para uso contínuo com nossas essências.',
-                    color: 'A39DA7', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/aromatizador_eletrico_porcelana_217_1_548c3b716dc01f07b41846ce0c654ca4.jpg',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/aromatizador_eletrico_porcelana_217_1_548c3b716dc01f07b41846ce0c654ca4.jpg',
                     aromas: ['Aparelho de porcelana, compatível com todas as essências.']
                 },
                  // Linha Encantos
@@ -217,49 +216,49 @@
                     id: 'agua-lencois-encantos-250',
                     name: '3 Aromas Água para Lençóis Encantos 250ml',
                     description: 'Da Linha Encantos, uma fragrância cuidadosamente desenvolvida para trazer bem-estar e a sensação acolhedora de roupa limpa e fresquinha.',
-                    color: 'C9B8E2', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_250ml_paragon_87_1_002d55dd7ef2b12f2b7dddb91e80cdcc.jpg',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_250ml_paragon_87_1_002d55dd7ef2b12f2b7dddb91e80cdcc.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'agua-lencois-encantos-500',
                     name: '3 Aromas Água para Lençóis Encantos 500ml',
                     description: 'A versão maior da Linha Encantos, para uma perfumação prolongada e especial no seu dia a dia.',
-                    color: 'C9B8E2', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_500ml_segredos_da_natureza_193_1_c65fe7bccd50fdd1acd31cf7b0787c62.jpg',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/agua_para_lencois_500ml_segredos_da_natureza_193_1_c65fe7bccd50fdd1acd31cf7b0787c62.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'home-spray-encantos-250',
                     name: '3 Aromas Home Spray Encantos 250ml',
                     description: 'Da Linha Encantos, desenvolvido para transformar seu ambiente com uma perfumação intensa e envolvente.',
-                    color: 'E6C0C8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/home_spray_250ml_cereja_e_avela_71_1_a7d7bd3ec2a80ca16be84571cb5b52f4.jpg',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/home_spray_250ml_cereja_e_avela_71_1_a7d7bd3ec2a80ca16be84571cb5b52f4.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'difusor-encantos-250',
                     name: '3 Aromas Difusor Encantos 250ml',
                     description: 'Da Linha Encantos, a solução perfeita para manter seu ambiente perfumado de maneira suave e constante. Acompanha varetas de fibra.',
-                    color: 'E6C0C8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/difusor_de_ambiente_250ml_super_baby_115_1_8458424dc09e54666c33289b6be83613.jpg',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/difusor_de_ambiente_250ml_super_baby_115_1_8458424dc09e54666c33289b6be83613.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'sabonete-liquido-encantos-250',
                     name: '3 Aromas Sabonete Líquido Encantos 250ml',
                     description: 'A combinação perfeita de limpeza, hidratação e perfume da Linha Encantos. Deixa a pele macia, hidratada e com uma fragrância irresistível.',
-                    color: 'DDC4E6', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/sabonete_liquido_250ml_segredos_da_natureza_185_1_014943345e0c76b4f00251665d50e1c5.jpg',
+                    color: 'EADBC8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/sabonete_liquido_250ml_segredos_da_natureza_185_1_014943345e0c76b4f00251665d50e1c5.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'essencia-encantos-18',
                     name: '3 Aromas Essência Concentrada Encantos 18ml',
                     description: 'Da Linha Encantos, para uso no Aromatizador Elétrico. Proporciona uma experiência olfativa única, preenchendo o ambiente com um perfume marcante.',
-                    color: 'B8D8B6', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/essencia_concentrada_18ml_sementes_do_brasil_109_1_43b46077c7c2deaf3ff6aa85cb9326e7.jpg',
+                    color: 'EADBC8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/essencia_concentrada_18ml_sementes_do_brasil_109_1_43b46077c7c2deaf3ff6aa85cb9326e7.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'vela-aromatica-encantos-190',
                     name: '3 Aromas Vela Aromática Encantos 190g',
                     description: 'Da Linha Encantos, um convite para momentos de relaxamento. Produzida com base vegana, libera um aroma intenso e duradouro.',
-                    color: 'F0C9D1', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/vela_aromatica_190g_jardim_dos_sonhos_167_2_597d94a8f8fa4d9eeae90454d19575a3.jpg',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/vela_aromatica_190g_jardim_dos_sonhos_167_2_597d94a8f8fa4d9eeae90454d19575a3.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 // NOVOS PRODUTOS - REFIL
@@ -267,56 +266,56 @@
                     id: 'refil-sabonete-encantos-250',
                     name: 'Refil Sabonete Líquido Encantos 250ml',
                     description: 'Perfeito para manter sua rotina de cuidados com a pele sempre completa e prática. Sua fórmula especial hidrata e perfuma, proporcionando uma sensação de frescor e suavidade.',
-                    color: 'DDC4E6', price: "Consulte", image: 'https://images.tcdn.com.br/files/1373537/themes/5/img/settings/01ee36bf-4356-4a36-a00d-854d882e183e.jpg?5bcee0e68d9e86769a0452368ea83b7e?5d515176c0e9750a90e29afc40bdf71c',
+                    color: 'EADBC8', price: "Consulte", image: 'https://images.tcdn.com.br/files/1373537/themes/5/img/settings/01ee36bf-4356-4a36-a00d-854d882e183e.jpg?5bcee0e68d9e86769a0452368ea83b7e?5d515176c0e9750a90e29afc40bdf71c',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'refil-homespray-encantos-250',
                     name: 'Refil Home Spray Encantos 250ml',
                     description: 'A solução perfeita para dar vida nova ao seu frasco de home spray favorito da Linha Encantos, mantendo a atmosfera do seu ambiente sempre agradável.',
-                    color: 'E6C0C8', price: "Consulte", image: 'https://images.tcdn.com.br/files/1373537/themes/5/img/settings/e7678c8a-4304-47ae-9801-0c30c0d64599.jpg?5bcee0e68d9e86769a0452368ea83b7e?5d515176c0e9750a90e29afc40bdf71c',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/files/1373537/themes/5/img/settings/e7678c8a-4304-47ae-9801-0c30c0d64599.jpg?5bcee0e68d9e86769a0452368ea83b7e?5d515176c0e9750a90e29afc40bdf71c',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'refil-difusor-encantos-250',
                     name: 'Refil Difusor Encantos 250ml',
                     description: 'Praticidade e sustentabilidade! Reutilize seus frascos da Linha Encantos. Acompanha 1 kit de varetas de fibra.',
-                    color: 'C9B8E2', price: "Consulte", image: 'https://images.tcdn.com.br/files/1373537/themes/5/img/settings/ec18b695-fac3-4ddc-97b0-74384d7a7fcc.jpg?5bcee0e68d9e86769a0452368ea83b7e?5d515176c0e9750a90e29afc40bdf71c',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/files/1373537/themes/5/img/settings/ec18b695-fac3-4ddc-97b0-74384d7a7fcc.jpg?5bcee0e68d9e86769a0452368ea83b7e?5d515176c0e9750a90e29afc40bdf71c',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'refil-difusor-encantos-500',
                     name: 'Refil Difusor Encantos 500ml',
                     description: 'Praticidade e sustentabilidade! Reutilize seus frascos da Linha Encantos. Acompanha 2 kits de varetas de fibra.',
-                    color: 'C9B8E2', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_difusor_de_ambiente_500ml_sementes_do_brasil_107_1_f35c1658c97ab684ad698db3287ec60b.jpg',
+                    color: 'D8B370', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_difusor_de_ambiente_500ml_sementes_do_brasil_107_1_f35c1658c97ab684ad698db3287ec60b.jpg',
                     aromas: ['Brisa da Manhã', 'Jardim dos Sonhos', 'Segredos da Natureza']
                 },
                 {
                     id: 'refil-homespray-250',
                     name: 'Refil Home Spray 250ml',
                     description: 'A solução perfeita para dar vida nova ao seu frasco de home spray favorito. Reponha o líquido com o aroma de sua preferência.',
-                    color: 'D3E0D2', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_de_home_spray_250ml_algodao_11_1_bfd1e3061b9bc83641d5bbf98e04efe3.jpg',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_de_home_spray_250ml_algodao_11_1_bfd1e3061b9bc83641d5bbf98e04efe3.jpg',
                     aromas: ['Algodão', 'Alecrim', 'Bamboo', 'Capoart', 'Cereja e Avelã', 'Confort Home', 'Madeiras Nobres', 'Paragon', 'Super Baby', 'Vanilla']
                 },
                 {
                     id: 'refil-homespray-500',
                     name: 'Refil Home Spray 500ml',
                     description: 'A solução perfeita para dar vida nova ao seu frasco de home spray favorito. Reponha o líquido com o aroma de sua preferência.',
-                    color: 'D3E0D2', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_home_spray_500ml_paragon_95_1_b6566a0be51c03eb235c66b12cb1115a.jpg',
+                    color: '9C8467', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_home_spray_500ml_paragon_95_1_b6566a0be51c03eb235c66b12cb1115a.jpg',
                     aromas: ['Paragon', 'Vanilla']
                 },
                 {
                     id: 'refil-difusor-250',
                     name: 'Refil Difusor de Ambiente 250ml',
                     description: 'Praticidade e sustentabilidade! Reutilize seus frascos e reponha o líquido com seu aroma favorito. Acompanha 1 kit de varetas.',
-                    color: 'B8D8B6', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_difusor_de_ambiente_250ml_super_baby_119_1_b1a26dec75f914de079d29872a89e913.jpg',
+                    color: 'EADBC8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_difusor_de_ambiente_250ml_super_baby_119_1_b1a26dec75f914de079d29872a89e913.jpg',
                     aromas: ['Algodão', 'Alecrim', 'Bamboo', 'Capoart', 'Cereja e Avelã', 'Confort Home', 'Madeiras Nobres', 'Paragon', 'Sementes do Brasil', 'Super Baby', 'Vanilla']
                 },
                 {
                     id: 'refil-difusor-500',
                     name: 'Refil Difusor de Ambiente 500ml',
                     description: 'Praticidade e sustentabilidade! Reutilize seus frascos e reponha o líquido com seu aroma favorito. Acompanha 2 kits de varetas.',
-                    color: 'B8D8B6', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_difusor_500ml_alecrim_25_1_4b40b39a3725016052d478b91eb43bb9.jpg',
+                    color: 'EADBC8', price: "Consulte", image: 'https://images.tcdn.com.br/img/img_prod/1373537/refil_difusor_500ml_alecrim_25_1_4b40b39a3725016052d478b91eb43bb9.jpg',
                     aromas: ['Alecrim', 'Bamboo', 'Capoart', 'Cereja e Avelã', 'Madeiras Nobres', 'Paragon', 'Sementes do Brasil', 'Super Baby', 'Vanilla']
                 }
             ];
@@ -354,12 +353,11 @@
                 card.style.transitionDelay = `${(index % 4) * 100}ms`;
                 card.dataset.productId = product.id;
                 card.innerHTML = `
-                    <!-- MUDANÇA AQUI: Adicionado container para a imagem com aspect ratio -->
-                    <div class="aspect-square bg-gray-100 p-2">
+                    <div class="aspect-square bg-[var(--bg-main)] p-2">
                         <img src="${product.image}" alt="[Imagem do produto ${product.name}]" class="w-full h-full object-contain">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="font-playfair text-xl font-bold flex-grow">${product.name}</h3>
+                        <h3 class="font-playfair text-xl font-bold flex-grow text-[var(--text-main)]">${product.name}</h3>
                         <p class="text-[var(--text-light)] mt-2 text-sm flex-grow">${product.description.substring(0, 100)}...</p>
                         <div class="mt-4 pt-4 border-t border-gray-200/50 flex justify-between items-center">
                             <span class="text-lg font-bold" style="color:#${product.color}">${product.price}</span>
@@ -371,7 +369,7 @@
 
                 // Gera a lista de aromas para a página de detalhes
                 const aromasHtml = product.aromas.map(scent => 
-                    `<span class="bg-gray-200/60 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full">${scent}</span>`
+                    `<span class="bg-[var(--accent-sand)]/60 text-[var(--text-main)] text-sm font-semibold px-3 py-1 rounded-full">${scent}</span>`
                 ).join('');
 
                 // Página de detalhes do produto (oculta por padrão)
@@ -381,11 +379,10 @@
                 productPage.innerHTML = `
                     <div class="min-h-screen pt-24 md:pt-32 pb-16">
                         <div class="container mx-auto px-6">
-                            <button class="back-to-main mb-8 font-bold text-[var(--accent-pink)] hover:underline">‹ Voltar para todos os produtos</button>
+                            <button class="back-to-main mb-8 font-bold text-[var(--accent-gold)] hover:underline">‹ Voltar para todos os produtos</button>
                             <div class="flex flex-col lg:flex-row gap-12 items-start">
                                 <div class="lg:w-1/2">
-                                    <!-- MUDANÇA AQUI: Adicionado container para a imagem com aspect ratio -->
-                                    <div class="aspect-square bg-gray-100 rounded-2xl shadow-2xl p-4">
+                                    <div class="aspect-square bg-[var(--bg-secondary)]/60 rounded-2xl shadow-2xl p-4">
                                         <img src="${product.image}" alt="[Imagem do produto ${product.name}]" class="w-full h-full object-contain">
                                     </div>
                                 </div>
@@ -394,7 +391,7 @@
                                     <p class="text-lg text-[var(--text-light)] my-6">${product.description}</p>
                                     <div class="text-4xl font-bold my-6" style="color:#${product.color}">${product.price}</div>
                                     
-                                    <div class="mt-8 border-t border-gray-200 pt-6">
+                                    <div class="mt-8 border-t border-[var(--accent-sand)]/50 pt-6">
                                         <h3 class="font-playfair text-2xl font-bold text-[var(--text-main)] mb-4">Aromas Disponíveis</h3>
                                         <div class="flex flex-wrap gap-2">
                                             ${aromasHtml}
