@@ -30,13 +30,9 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            /* IMAGEM DE FUNDO ATUALIZADA PELO USUÁRIO */
-            background-image: url('https://elements-resized.envatousercontent.com/elements-preview-images/96fdb30c-c9b4-4603-9b69-0944a7dd8e6e?w=1370&cf_fit=scale-down&q=85&format=auto&s=edd515a59c9632d771415feed39d7c679456671f4af78e9be1b8db6b08f81c5b');
-            background-color: var(--bg-main);
-            background-attachment: fixed;
-            /* CORREÇÃO: 'cover' garante que a imagem cubra toda a tela */
-            background-size: cover;
-            background-position: center center;
+            /* CORREÇÃO: Fundo alterado para branco sólido */
+            background-image: none;
+            background-color: #FFFFFF;
             color: var(--text-main);
         }
         .font-playfair { font-family: 'Playfair Display', serif; }
@@ -58,7 +54,7 @@
         }
         
         .card {
-            @apply bg-[var(--bg-secondary)]/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transition-all duration-300 border border-transparent flex flex-col cursor-pointer;
+            @apply bg-[var(--bg-main)]/50 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden transition-all duration-300 border border-transparent flex flex-col cursor-pointer;
         }
         .card:hover {
             @apply shadow-2xl transform -translate-y-2 border-[var(--accent-gold)]/50;
@@ -90,7 +86,7 @@
         </header>
 
         <!-- Hero Section -->
-        <section id="home" class="relative bg-transparent min-h-[80vh] flex items-center overflow-hidden">
+        <section id="home" class="relative bg-transparent min-h-[80vh] flex items-center overflow-hidden py-16">
             <div class="container mx-auto px-6 z-20">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                     <div class="md:w-1/2 text-center md:text-left reveal">
@@ -106,7 +102,7 @@
         </section>
 
         <!-- Seção Produtos -->
-        <section id="produtos" class="py-24">
+        <section id="produtos" class="py-24 bg-[var(--bg-main)]/40">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16 reveal">
                     <h2 class="font-playfair text-4xl font-bold text-[var(--text-main)]">Nossa Coleção Completa</h2>
@@ -119,7 +115,7 @@
         </section>
 
         <!-- Seção Sobre -->
-        <section id="sobre" class="py-24 bg-[var(--bg-secondary)]/50">
+        <section id="sobre" class="py-24">
             <div class="container mx-auto px-6">
                  <div class="flex flex-col md:flex-row-reverse items-center justify-between gap-12">
                     <div class="md:w-1/2 text-center md:text-left reveal">
@@ -134,7 +130,7 @@
         </section>
         
         <!-- Footer -->
-        <footer class="bg-[var(--bg-secondary)]/30 mt-16 py-12 text-center text-[var(--text-main)]">
+        <footer class="bg-[var(--bg-main)]/40 mt-16 py-12 text-center text-[var(--text-main)]">
             <div class="container mx-auto">
                 <p class="font-playfair font-bold text-2xl mb-2">Joyce Mello</p>
                 <p class="text-[var(--text-light)]">&copy; 2025 - Seu refúgio perfumado.</p>
@@ -355,7 +351,7 @@
                 card.style.transitionDelay = `${(index % 4) * 100}ms`;
                 card.dataset.productId = product.id;
                 card.innerHTML = `
-                    <div class="aspect-square bg-[var(--bg-main)] p-2">
+                    <div class="aspect-square bg-[var(--bg-secondary)] p-2">
                         <img src="${product.image}" alt="[Imagem do produto ${product.name}]" class="w-full h-full object-contain">
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
