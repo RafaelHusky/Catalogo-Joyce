@@ -30,11 +30,13 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            /* IMAGEM DE FUNDO ATUALIZADA PARA TOM BEGE */
+            /* IMAGEM DE FUNDO ATUALIZADA PELO USUÁRIO */
             background-image: url('https://elements-resized.envatousercontent.com/elements-preview-images/96fdb30c-c9b4-4603-9b69-0944a7dd8e6e?w=1370&cf_fit=scale-down&q=85&format=auto&s=edd515a59c9632d771415feed39d7c679456671f4af78e9be1b8db6b08f81c5b');
             background-color: var(--bg-main);
             background-attachment: fixed;
-            background-size: auto;
+            /* CORREÇÃO: 'cover' garante que a imagem cubra toda a tela */
+            background-size: cover;
+            background-position: center center;
             color: var(--text-main);
         }
         .font-playfair { font-family: 'Playfair Display', serif; }
